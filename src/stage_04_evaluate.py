@@ -22,6 +22,8 @@ logging.basicConfig(
 
 
 def main(config_path):
+    mlflow.set_tracking_uri("http://127.0.0.1:1234")
+    
     config = read_yaml(config_path)
 
     artifacts = config["artifacts"]

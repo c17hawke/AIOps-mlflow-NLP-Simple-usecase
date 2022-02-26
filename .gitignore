@@ -138,5 +138,6 @@ dmypy.json
 configs/secrets.yaml
 
 mlruns/
+artifacts/
 
 

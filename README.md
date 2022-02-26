@@ -61,4 +61,7 @@ echo "*.log" >> logs/.gitignore
 git rm --cached logs/running_logs.log
 ```
 
-updated by rohan 
+###  start mlflow sqlite server
+```bash
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 127.0.0.1 -p 1234
+```

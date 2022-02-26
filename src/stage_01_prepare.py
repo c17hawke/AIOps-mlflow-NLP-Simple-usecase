@@ -20,6 +20,8 @@ logging.basicConfig(
 
 def main(config_path, params_path):
     ## converting XML data tsv
+    mlflow.set_tracking_uri("http://127.0.0.1:1234")
+
     config = read_yaml(config_path)
     params = read_yaml(params_path)
 
@@ -30,7 +32,7 @@ def main(config_path, params_path):
     seed = params["prepare"]["seed"]
     mlflow.log_param("split", split)
     mlflow.log_param("seed", seed)
-    
+
     random.seed(seed)
 
     artifacts = config["artifacts"]
