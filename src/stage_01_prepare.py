@@ -6,6 +6,7 @@ import logging
 from src.utils.common import read_yaml, create_directories
 from src.utils.data_mgmt import process_posts
 import random
+import mlflow
 
 
 STAGE = "One"
@@ -27,7 +28,9 @@ def main(config_path, params_path):
 
     split = params["prepare"]["split"]
     seed = params["prepare"]["seed"]
-
+    mlflow.log_param("split", split)
+    mlflow.log_param("seed", seed)
+    
     random.seed(seed)
 
     artifacts = config["artifacts"]

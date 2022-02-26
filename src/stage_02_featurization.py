@@ -7,6 +7,8 @@ from src.utils.common import read_yaml, create_directories, get_df
 from src.utils.featurize import save_matrix
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+import mlflow
+
 
 STAGE = "Two"
 
@@ -34,6 +36,8 @@ def main(config_path, params_path):
 
     max_features = params["featurize"]["max_features"]
     ngrams = params["featurize"]["ngrams"]
+    mlflow.log_param("max_features", max_features)
+    mlflow.log_param("ngrams", ngrams)
 
     df_train = get_df(train_data_path)
 
