@@ -1,7 +1,6 @@
 ### dependency
+mlflow
 tqdm
-dvc
-dvc[s3]
 pandas
 numpy
 Scipy
